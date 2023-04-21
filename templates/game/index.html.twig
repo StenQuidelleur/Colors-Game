@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Game{% endblock %}
+
+{% block body %}
+    <div class="row justify-content-between">
+        {% for color in colors %}
+            <div style="background-color: {{ color.value }}; width: 200px; height: 200px;"></div>
+        {% endfor %}
+        <a class="btn btn-warning" href="{{ path('play_game', {'id': gameId}) }}" style="margin-top: 100px">Play Game</a>
+    </div>
+{% endblock %}

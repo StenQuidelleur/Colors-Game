@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h3>Scoreboard</h3>
+    <table class="table mt-3">
+        <thead>
+            <tr>
+                <th>Nickname</th>
+                <th>Score</th>
+                <th>Play</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for user in users %}
+            <tr>
+                <td>{{ user.nickname }}</td>
+                <td>{{ user.score == null ? 0 : user.score }}</td>
+                <td>
+                    <a class="btn btn-warning" href="{{ path('app_game', {'id': user.id}) }}">Play with this User</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

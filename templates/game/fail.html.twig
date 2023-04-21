@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+    <div class="container">
+        <h1>!!!! FAIL !!!!</h1>
+        <p>You don't add point to your score...</p>
+        <p><strong>{{ user.nickname }}</strong> => Your score is: <strong>{{ user.score }}</strong></p>
+
+        <a class="btn btn-secondary" href="{{ path('user_game') }}">Back to menu</a>
+    </div>
+{% endblock %}
